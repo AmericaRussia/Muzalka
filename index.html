@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Музалка - музыкальная школа</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="img/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Верхняя панель контактов -->
+    <div class="top-bar">
+      <div class="container top-bar__inner">
+        <div class="top-bar__item">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>г. Далёкий, улица Социалистическая, 1</span>
+        </div>
+        <div class="top-bar__item">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+            ></path>
+          </svg>
+          <a href="tel:+79961904597">+8 (800) 555-35-35</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Основная шапка -->
+    <header class="header">
+      <div class="container header__inner">
+        <a href="#" class="logo">
+          <div class="logo__bars">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="logo__text">
+            <small>Музыкальная школа</small>
+            <strong>МУЗАЛКА</strong>
+          </div>
+        </a>
+
+        <nav class="nav" id="mainNav">
+          <a href="#about" class="nav__link">О нас</a>
+          <a href="#directions" class="nav__link"
+            >Направления <span class="plus">+</span></a
+          >
+          <a href="#teachers" class="nav__link">Преподаватели</a>
+          <a href="#contacts" class="nav__link">Контакты</a>
+        </nav>
+
+        <a href="#trial" class="btn btn--primary header__cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"
+            />
+          </svg>
+          Первое занятие бесплатно
+        </a>
+
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          aria-label="Переключить тему"
+          title="Сменить тему"
+        >
+          <svg
+            class="icon-moon"
+            width="19"
+            height="19"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg
+            class="icon-sun"
+            width="19"
+            height="19"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <button class="burger" id="burgerBtn" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero-секция -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="hero__subtitle">МУЗЫКАЛЬНАЯ ШКОЛА В ЧЕБОКСАРАХ</span>
+          <h1 class="hero__title">Минимум теории<br />Максимум результата</h1>
+          <p class="hero__desc">
+            Научим играть и петь любимые песни как у исполнителей
+          </p>
+          <a href="#trial" class="btn btn--primary btn--lg"
+            >Записаться на пробное занятие</a
+          >
+          <div class="hero__popular">
+            <span>Популярное:</span>
+            <a href="#directions" data-quick-tag="strings">Гитара</a>
+            <a href="#directions" data-quick-tag="vocals">Вокал</a>
+            <a href="#directions" data-quick-tag="piano">Фортепиано</a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="orbit orbit--1"></div>
+          <div class="orbit orbit--2"></div>
+          <div class="orbit orbit--3"></div>
+          <!-- Замените путь src на свою картинку из папки images -->
+          <img
+            src="img/heroMicrophone.avif"
+            alt="Картинка с микрофоном"
+            class="hero__img"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция направлений -->
+    <section class="directions-section" id="directions">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-eyebrow"
+              >ОБУЧЕНИЕ С НУЛЯ И ДЛЯ ПРОДВИНУТЫХ</span
+            >
+            <h2 class="section-title">Направления в музыке</h2>
+          </div>
+        </div>
+
+        <!-- Фильтр направлений -->
+        <div class="directions-filter-row">
+          <div class="tags-cloud" id="tagsCloud">
+            <button class="tag-btn active" data-tag="all">
+              Все направления
+            </button>
+
+            <!-- Струнные инструменты -->
+            <div class="tag-group" data-group="strings">
+              <button class="tag-btn tag-btn--group" data-tag="strings">
+                Гитары
+                <span class="tag-arrow">▾</span>
+              </button>
+              <div class="tag-sublist">
+                <button class="tag-btn tag-btn--sub" data-tag="acoustic">
+                  Классическая гитара
+                </button>
+                <button class="tag-btn tag-btn--sub" data-tag="electric">
+                  Электрогитара
+                </button>
+                <button class="tag-btn tag-btn--sub" data-tag="bass">
+                  Бас-гитара
+                </button>
+                <button class="tag-btn tag-btn--sub" data-tag="ukulele">
+                  Укулеле
+                </button>
+              </div>
+            </div>
+
+            <!-- Вокал и сольфеджио -->
+            <div class="tag-group" data-group="vocals">
+              <button class="tag-btn tag-btn--group" data-tag="vocals">
+                Вокал и сольфеджио
+                <span class="tag-arrow">▾</span>
+              </button>
+              <div class="tag-sublist">
+                <button class="tag-btn tag-btn--sub" data-tag="vocal">
+                  Эстрадный и джазовый вокал
+                </button>
+                <button class="tag-btn tag-btn--sub" data-tag="rock-vocal">
+                  Рок и экстрим вокал
+                </button>
+                <button class="tag-btn tag-btn--sub" data-tag="solfeggio">
+                  Сольфеджио
+                </button>
+              </div>
+            </div>
+
+            <!-- Барабаны -->
+            <button class="tag-btn" data-tag="drums">Барабаны</button>
+
+            <!-- Синтезатор и фортепиано -->
+            <button class="tag-btn" data-tag="piano">
+              Синтезатор и фортепиано
+            </button>
+          </div>
+        </div>
+
+        <!-- Кнопки управления каруселью по центру между фильтром и каруселью -->
+        <div class="carousel-controls carousel-controls--between">
+          <button class="carousel-btn" id="dirPrev" aria-label="Назад">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <button class="carousel-btn" id="dirNext" aria-label="Вперёд">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Бесконечная полноширинная карусель -->
+      <div class="carousel-viewport carousel-viewport--full" id="dirViewport">
+        <div class="carousel-track" id="dirTrack"></div>
+      </div>
+    </section>
+
+    <!-- Блок о музыкальной школе -->
+    <section class="about-hero about-hero--embedded" id="about">
+      <div class="container">
+        <div class="about-hero__grid">
+          <div>
+            <span class="section-eyebrow">О МУЗЫКАЛЬНОЙ ШКОЛЕ «МУЗАЛКА»</span>
+            <h2 class="about-hero__title">
+              Музыка, в которую влюбляешься с первого аккорда
+            </h2>
+            <p class="about-hero__text">
+              Мы создали пространство, где обучение строится вокруг живой
+              практики, любимых композиций и поддержки действующих музыкантов —
+              без скучного заучивания и страха сцены. Также у нас вы сможете
+              найти настоящих друзей, а при желании сколотить группу, с которыми
+              сможете пойти плечом к плечу по жизни.
+            </p>
+          </div>
+
+          <div class="about-stats">
+            <div class="stat-card">
+              <strong>70%</strong>
+              <span
+                >каждого урока занимает живая практика с инструментом или
+                микрофоном</span
+              >
+            </div>
+            <div class="stat-card">
+              <strong>1 200+</strong>
+              <span
+                >учеников сыграли и спели свои первые песни на наших
+                квартирниках</span
+              >
+            </div>
+            <div class="stat-card">
+              <strong>с 4 лет</strong>
+              <span
+                >и без верхнего порога — занимаются дети, подростки и
+                взрослые</span
+              >
+            </div>
+            <div class="stat-card">
+              <strong>4.9 ★</strong>
+              <span>средняя оценка школы по отзывам учеников и родителей</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Бесконечная карусель преподавателей -->
+    <section class="teachers-section" id="teachers">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-eyebrow">НАША КОМАНДА</span>
+          <h2 class="section-title">Преподаватели-практики</h2>
+          <div class="carousel-controls carousel-controls--center">
+            <button
+              class="carousel-btn"
+              id="teachPrev"
+              aria-label="Предыдущий преподаватель"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button
+              class="carousel-btn"
+              id="teachNext"
+              aria-label="Следующий преподаватель"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="teachers-carousel teachers-carousel--full"
+        id="teachersCarousel"
+      >
+        <div class="teachers-track" id="teachersTrack"></div>
+      </div>
+    </section>
+
+    <!-- Преимущества и подход -->
+    <section class="about-values-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-eyebrow">ПОЧЕМУ ВЫБИРАЮТ НАС</span>
+            <h2 class="section-title">Как проходит обучение в «Музалке»</h2>
+          </div>
+        </div>
+
+        <div class="values-grid">
+          <article class="value-card">
+            <div class="value-card__num">01</div>
+            <h3>Индивидуальная программа</h3>
+            <p>
+              Подбираем репертуар под ваш музыкальный вкус — от классики и джаза
+              до современного рока, инди и поп-хитов.
+            </p>
+          </article>
+          <article class="value-card">
+            <div class="value-card__num">02</div>
+            <h3>Инструменты уже в классах</h3>
+            <p>
+              На первое время покупать гитару или синтезатор не нужно — всё
+              необходимое оборудование ждёт вас в студии.
+            </p>
+          </article>
+          <article class="value-card">
+            <div class="value-card__num">03</div>
+            <h3>Сцена и музыкальные группы</h3>
+            <p>
+              Объединяем учеников разных направлений в бэнды, помогаем записать
+              первый трек и выйти на сцену без волнения.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секция записи на бесплатное занятие -->
+    <section class="trial-section" id="trial">
+      <div class="trial-split">
+        <div class="trial-left">
+          <div class="trial-left__content">
+            <h2>Пробное занятие</h2>
+            <p class="trial-tagline">ЗАПИШИТЕСЬ НА ПРОБНИК СЕЙЧАС</p>
+          </div>
+        </div>
+
+        <div class="trial-right">
+          <form class="trial-form" id="trialForm">
+            <div class="form-group">
+              <input
+                type="text"
+                id="userName"
+                placeholder="Ваше имя"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="tel"
+                id="userPhone"
+                placeholder="Ваш телефон"
+                required
+              />
+            </div>
+            <div class="form-group form-group--labeled">
+              <label for="userDirection">Ваше направление</label>
+              <select id="userDirection" required>
+                <option value="" disabled selected>
+                  Выберите направление...
+                </option>
+                <option value="Акустическая гитара">Акустическая гитара</option>
+                <option value="Электрогитара">Электрогитара</option>
+                <option value="Бас-гитара">Бас-гитара</option>
+                <option value="Укулеле">Укулеле</option>
+                <option value="Вокал">Вокал</option>
+                <option value="Фортепиано и пианино">
+                  Фортепиано и пианино
+                </option>
+                <option value="Сольфеджио">Сольфеджио</option>
+                <option value="Барабаны">Барабаны</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">
+              Отправить
+            </button>
+            <p class="form-policy">
+              Нажимая кнопку отправить, вы соглашаетесь с «Политикой
+              конфиденциальности» и «Правилами сайта»
+            </p>
+            <div class="form-success" id="formSuccess">
+              Спасибо! Мы получили вашу заявку и скоро свяжемся с вами.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer" id="contacts">
+      <div class="footer-main">
+        <div class="container footer-grid">
+          <div class="footer-col">
+            <h4>О школе</h4>
+            <ul>
+              <li><a href="#">Образовательные стандарты и требования</a></li>
+              <li><a href="#">Материально-техническое обеспечение</a></li>
+              <li><a href="#">Структура и органы управления</a></li>
+              <li><a href="#">Летний лагерь</a></li>
+              <li><a href="#">Независимая оценка качества</a></li>
+              <li><a href="#">Вакансии</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Популярное</h4>
+            <ul>
+              <li><a href="#directions">Гитара</a></li>
+              <li><a href="#directions">Электрогитара</a></li>
+              <li><a href="#directions">Вокал</a></li>
+              <li><a href="#directions">Фортепиано</a></li>
+              <li><a href="#directions">Сольфеджио</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Контакты</h4>
+            <div class="contact-block">
+              <small>Наши адреса:</small>
+              <p>г. Далёкий, улица Социалистическая, 1</p>
+            </div>
+            <div class="contact-block">
+              <small>График и время работы:</small>
+              <p>ПН-ВС (ежедневно), с 9:00 до 21:00</p>
+            </div>
+            <div class="contact-block">
+              <small>Телефон для связи:</small>
+              <p><a href="tel:+79961904597">+8 (800) 555-35-35</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p>
+            © 2015–2026, Частная музыкальная школа «Музалка» — ДШИ / ДМШ в
+            Далёком
+          </p>
+          <div class="footer-links">
+            <a href="#">Политика конфиденциальности</a>
+            <a href="#">Правила сайта</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
